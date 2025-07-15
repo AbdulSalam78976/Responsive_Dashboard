@@ -53,7 +53,7 @@ class HeaderWidget extends StatelessWidget {
               ),
             ),
           ),
-        if (!isMobile)
+        if (isMobile)
           Row(
             children: [
               Padding(

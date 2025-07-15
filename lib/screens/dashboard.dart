@@ -10,7 +10,7 @@ class Dashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDesktop = Responsive.isDesktop(context);
-    final isTablet = Responsive.isTablet(context);
+
     final isMobile = Responsive.isMobile(context);
 
     return Scaffold(
@@ -25,7 +25,7 @@ class Dashboard extends StatelessWidget {
         child: Row(
           children: [
             if (isDesktop)
-              Expanded(flex: 2, child: SizedBox(child: SideMenu())),
+              const Expanded(flex: 2, child: SizedBox(child: SideMenu())),
             const Expanded(
               flex: 7,
               child: Padding(
@@ -33,7 +33,7 @@ class Dashboard extends StatelessWidget {
                 child: DashboardWidget(),
               ),
             ),
-            if (isDesktop) Expanded(flex: 3, child: SummaryWidget()),
+            if (isDesktop) const Expanded(flex: 3, child: SummaryWidget()),
           ],
         ),
       ),
